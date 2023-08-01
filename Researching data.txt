@@ -1,1 +1,7 @@
 Researching data sources for the project. Also testing Github desktop.
+
+Climate Data Store Data:
+1. Precipitation - https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-gridded-observations-global-and-regional?tab=overview
+2. Temperature - https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-gridded-observations-global-and-regional?tab=overview
+3. Fire - https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-fire-radiative-power?tab=overview
+4. Sea Surface Temperatue - https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-sea-surface-temperature?tab=overview
