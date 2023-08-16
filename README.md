@@ -1,6 +1,6 @@
-# Ctrl-F
+# CTRL-F
 
-![Alt Text](ctrl+f.png)
+<img src="ctrl+f.png" width="500"/>
 
 ## Overview
 
