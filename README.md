@@ -1,4 +1,4 @@
-# FinalProject_Ctrl-F
+# Ctrl-F
 
 ![Alt Text](ctrl+f.png)
 
