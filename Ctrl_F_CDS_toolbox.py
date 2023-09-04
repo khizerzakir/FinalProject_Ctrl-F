@@ -1,3 +1,23 @@
+"""
+
+This script defines a CDStoolbox application for visualizing temperature data and time series plots.
+In order to interact with this application, run this script on the CDS ToolBox Editor.
+    
+The application consists of the following components:
+1. An outer application that displays a dynamic map of mean annual temperatures for selected year.
+2. A dropdown input widget to select a year for which to display temperature data.
+3. When the user clicks on the map, it launches a child application to display a time series plot of temperature data
+   for the selected location and year.
+4. The child application receives location information (latitude and longitude) from the map click event and monthly
+   temperature data for the selected year.
+
+Functions:
+- `plot_time_series(location, monthly_temperature)`: Child function that plots a time series at the clicked location.
+- `application(year)`: Main application function that retrieves temperature data for the selected year and displays a
+  dynamic map of mean annual temperatures. It also launches the child application when the map is clicked.
+
+"""
+
 import cdstoolbox as ct
 
 # Create a dictionary that contains the layout properties
@@ -14,6 +34,16 @@ app_layout = {
 # Define a child function plotting a time series at the clicked location
 # The child app takes location and monthly temperature as inputs. Location is automatically passed by the "click on map" event in the main application
 def plot_time_series(location, monthly_temperature):
+    """
+    This function generates a time series plot of temperature data for a specific location.
+
+    Parameters:
+    - location (dict): A dictionary containing the latitude and longitude of the selected location.
+    - monthly_temperature (cdstoolbox.cube.Cube): Monthly temperature data for the selected year.
+
+    Returns:
+    - fig (cdstoolbox.chart.Figure): The time series plot as a CDStoolbox Figure object.
+    """
     
     # Get lat, lon from the clicked location
     lat, lon = location['lat'], location['lon']
@@ -41,7 +71,17 @@ def plot_time_series(location, monthly_temperature):
 
 # Define an application function which returns a livemap showing the annual mean temperature
 def application(year):  
-    
+    """
+   This function serves as the main application and displays a dynamic map of mean annual temperatures for the selected year.
+   It also launches a child application when the map is clicked to display a time series plot of temperature data.
+
+   Parameters:
+   - year (int): The selected year for which to display temperature data.
+
+   Returns:
+   - plot (cdstoolbox.livemap.Livemap): The dynamic map displaying mean annual temperatures as a CDStoolbox Livemap object.
+   """
+   
     # Retrieve full resolution monthly average temperature data for the selected year
     monthly_temperature_data = ct.catalogue.retrieve(
         'reanalysis-era5-single-levels-monthly-means',
