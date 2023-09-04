@@ -1,8 +1,9 @@
 """
 This script defines a CDStoolbox application for visualizing temperature data and time series plots.
-The link to access this is application: 
+The link to access the hosted version of this application: 
+    
 The application consists of the following components:
-1. An outer application that displays a dynamic map of mean annual temperatures for selected years.
+1. An outer application that displays a dynamic map of mean annual temperatures for selected year.
 2. A dropdown input widget to select a year for which to display temperature data.
 3. When the user clicks on the map, it launches a child application to display a time series plot of temperature data
    for the selected location and year.
