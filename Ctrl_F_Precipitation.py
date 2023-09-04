@@ -1,6 +1,6 @@
 """
 This script defines a CDStoolbox application for visualizing precipitation data and time series plots.
-The link to access the hosted version of this application: 
+In order to interact with this application, run this script on the CDS ToolBox Editor.
     
 The application consists of the following components:
 1. An outer application that displays a dynamic map of mean annual precipitation for selected year.
