@@ -31,6 +31,14 @@ Select the year to display the mean precipitation and then draw the desired area
 Application 2 Demo:
 https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/24e77f0c-4ed8-4085-8f74-e213752fefe6
 
+Application 3:
+Temperature
+
+Application 3 Demo:
+https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/4dfaa075-129c-4558-a3d8-6bd16a5cf428
+
+
+
 
 
 
