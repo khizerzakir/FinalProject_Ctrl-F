@@ -29,48 +29,76 @@ In this project, we explored different ways of using CDS data repositories. As p
 
 The Python Environment and Requirements are outlined in the following files:
 
-1. .yml file
-2. .txt file
+1. .yml file - [ctrl_f.yml](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/ctrl_f.yml)
+2. .txt file - [ctrl_f.txt](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/ctrl_f.txt) 
 
-There are 2 notebooks presented in the repo. The first notebook (LINK) showcases how to access the CDS using the CDS API to acquire temperature data for a defined date range (more explanation in the script).
+There are 2 notebooks presented in the repo. The [first notebook](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/temp2m_download.py) showcases how to access the CDS using the CDS API to acquire temperature data for a defined date range (more explanation in the script).
 
-Following the data access aspect, the next steps involved reading the documentation on Xarray and other important libraries to better understand NetCDF files. The second notebook (LINK) explores the data analysis conducted on the files from the CDS, particularly, visualising the temperature data. Included in the second notebook, the xcube library is explored for producing a local plot viewer. This aspect is still under development.
+Following the data access aspect, the next steps involved reading the documentation on Xarray and other essential libraries to better understand NetCDF files. The [second notebook](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/reading_climate_data.ipynb) explores the data analysis conducted on the files from the CDS, particularly, visualising the temperature data. Included in the second notebook, the xcube library is explored for producing a local plot viewer. This aspect is still under development.
 
 ## The CDS Toolbox
 
 1. **Precipitation for a selected country**
    
+![Precip_1](https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/cd06cf5e-ec15-4f55-83ef-e203ddd90330)
+_Figure 1: Precipitation map display based on time selection_
 
+![Precip_2](https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/15474cdf-27af-4b3a-b337-b6ea10589af5)
+_Figure 2: Time series created of monthly mean precipitation for a selected country (in this example, Spain 2022)_
 
+A demonstration video can be found at the following link:
+https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/9694809b-312e-44d6-b9fb-df0bec68df07 
+  
+**How it works:**
 
-Application 1:
-Select a month and year and then select a European country. The selection then returns a time series of the monthly average precipitation.
+The user can select the month and year of interest from the drop-down. After selection, the map will display the average precipitation for the month selected. By default, December 2022 will be selected on the dropdown and the corresponding data displayed on the map. The next feature allows the user to select a country in Europe (the map should zoom to that country after selection) to generate a time series plot below the map. The time series displays the average monthly precipitation for the selected country.
 
-Application 1 Demo:
-https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/9694809b-312e-44d6-b9fb-df0bec68df07
+The application script (python file: LINK) defines two main methods: one to display the map, and the other to display the time series plot. The method to display the map receives user input of month and year from the dropdown. Then, the user-selected country is passed from the map to the method that plots the precipitation time series.
 
+2. **Precipitation for a selected area of interest**
 
+![Screenshot 2023-09-08 075351](https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/c581aab1-b438-48cc-875d-86663e5380ac)
+_Figure 3: Map display and selection of an area of interest_
 
+![Screenshot 2023-09-08 075516](https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/ffb4ec6a-65ee-4fda-a868-b8c389625aa4)
+_Figure 4: Time series plot for the selected area underdevelopment_
 
-Application 2: 
-Select the year to display the mean precipitation and then draw the desired area to produce a time series. This tool has some errors and does not display the time series. In future works, we aim to complete this application and get it fully operational.
-
-Application 2 Demo:
+A demonstration video can be found at the following link:
 https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/24e77f0c-4ed8-4085-8f74-e213752fefe6
 
-Application 3:
-Temperature
+**How it works:**
 
-Application 3 Demo:
-https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/4dfaa075-129c-4558-a3d8-6bd16a5cf428
+The user can select the year of interest from the drop-down. After selection, the map will display the annual precipitation average. By default, the year 2020 will be selected on the dropdown and the corresponding data displayed on the map. Then, click on the draw shape button ( ![](RackMultipart20230911-1-y0g9ku_html_47d10c6d35e29066.png) ) and draw an area of interest. Once the area is drawn, a time series plot is supposed to be generated below the map, displaying the monthly precipitation average in the selected area. However, currently, the plotting function is running into an error and is under active development.
+
+The application script (python file: LINK) defines two main methods: one to display the map, and the other to display the time series plot. The method to display the map receives user input of year from the dropdown. Then, once the user interacts with the map, the shape information is passed from the map to the method that plots the precipitation time series.
+
+3. **Temperature at a selected point location**
+   
+![Temperature shot 1](https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/4a2e2440-0ef8-4d92-8150-409f234f68b9)
+_Figure 5: Annual average temperature displayed on the map for the selected year_
+
+![Temperature shot 2](https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/d9387196-9951-4bba-ab10-d12a8b422630)
+_Figure 6: Time series of temperature at the selected point_
+
+A demonstration video can be found at the following link:
+https://github.com/khizerzakir/FinalProject_Ctrl-F/assets/127128607/24e77f0c-4ed8-4085-8f74-e213752fefe6
+
+**How it works:**
+
+The user can select the year of interest from the drop-down list ranging from 2020 to 2023. After selection, the map will display the average temperature for the year selected. By default, data is displayed for 2020. The next feature allows the user to select a point of interest to generate a time series plot below the map. The time series displays the average monthly temperature for the selected point for the selected year.
+
+The application script (python file: LINK) defines two main methods: one to display the map, and the other to display the time series plot. The method to display the map receives user input of the year from the dropdown. Then, the user-selected point is passed from the map to the method that plots the temperature time series.
+
+# Challenges
+
+1. While developing the application of displaying a time series plot for a user-defined shape, a major challenge was in understanding the error message and finding out where exactly in the script the error was thrown and how to solve it. More documentation, including examples, on the [CDS toolbox shape objects](https://cds.climate.copernicus.eu/toolbox/doc/api.html#shapes) – regarding their construction and usage in cube sub-setting and aggregating methods would have been helpful. We could not find related issues on the [user forum](https://confluence.ecmwf.int/display/CUSF/C3S+Climate+Data+Store+Toolbox+User+Forum) either.
+
+# Next Steps
+
+1. In this project, we were able to achieve the objective of allowing users to interact with weather data on precipitation and temperature for desired locations. However, as a next step, we would like to build a unified application for interacting with both datasets. Further, we would like to spend more time fixing the error that we are currently facing in the application for displaying a time series plot for a user-defined shape. To do this, we also would like to engage with the [CDS Toolbox user community](https://confluence.ecmwf.int/display/CUSF/C3S+Climate+Data+Store+Toolbox+User+Forum) online and seek help. We then aim to integrate the draw-shape functionality into the main application.
+2. We also explored the data through a Jupyter Notebook that informed the data processing in the application development. Going forward, we would also like to build the Jupyter Notebook further and use the xcube Python library to slice and dice the data from the C3S. Leveraging xcube's capabilities, we aim to build a dashboard interface for interacting with the data directly within the Notebook.
 
 
 
 
 
-
-
-
-Temperature
-
-## 
