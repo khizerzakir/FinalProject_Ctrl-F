@@ -32,9 +32,37 @@ The Python Environment and Requirements are outlined in the following files:
 1. .yml file - [ctrl_f.yml](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/ctrl_f.yml)
 2. .txt file - [ctrl_f.txt](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/ctrl_f.txt) 
 
-There are 2 notebooks presented in the repo. The [first notebook](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/temp2m_download.py) showcases how to access the CDS using the CDS API to acquire temperature data for a defined date range (more explanation in the script).
+There are 2 notebooks presented in the repo. The [first notebook](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/temp2m_download.py) showcases how to access the CDS using the CDS API to acquire temperature data for a defined date range and area extent (more explanation in the script).
 
-Following the data access aspect, the next steps involved reading the documentation on Xarray and other essential libraries to better understand NetCDF files. The [second notebook](https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/200fd76f78676bbfd23fe95d013ee1a7b8d217fc/reading_climate_data.ipynb) explores the data analysis conducted on the files from the CDS, particularly, visualising the temperature data. Included in the second notebook, the xcube library is explored for producing a local plot viewer. This aspect is still under development.
+Following the data access aspect, the next steps involved reading the documentation on Xarray, geopandas, matlplotlib, regionmask and other essential libraries to better understand NetCDF files and extract the data for a specific shapefile/AOI. The [second notebook][(https://github.com/khizerzakir/FinalProject_Ctrl-F/blob/d77fde494ce96682e7db5b4e961ac17001833d85/Ctrl_F_Temperature_clipped_mask.ipynb)] explores the data analysis conducted on the file(s) from the CDS, particularly, visualising the temperature data. 
+# Second Notebook Overview 
+# Exploring Temperature Data in Portugal using OOP and Geospatial Analysis
+**Dataset Information:**
+- Dataset Title: ERA5-Land hourly data from 1950 to present
+- Data Source: Copernicus Climate Change Service (C3S) Climate Data Store (CDS)
+- DOI: [10.24381/cds.e2161bac](https://doi.org/10.24381/cds.e2161bac)
+- Citation: Muñoz Sabater, J. (2019): ERA5-Land hourly data from 1950 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS). DOI: 10.24381/cds.e2161bac (Accessed on DD-MMM-YYYY)
+
+## Overview
+
+This notebook explores temperature data for Portugal using an Object-Oriented Programming (OOP) approach and geospatial analysis techniques. The temperature data is sourced from the CDS datastore and is specifically downloaded for parts of the Iberian Peninsula. However, for this use case, we focus on extracting temperature data for Portugal for a single year. This notebook showcases how to read and visualize NetCDF (nc) files, as well as work with administrative boundaries of Portugal using GeoDataFrames.
+
+The notebook is structured as follows:
+
+### 1. Importing Required Libraries
+
+We begin by importing essential Python libraries for data analysis, visualization, and geospatial analysis. This includes libraries such as `os`, `numpy`, `pandas`, `matplotlib`, `cartopy`, `seaborn`, `geopandas`, `earthpy`, `xarray`, and `regionmask`.
+
+### 2. The `Temp` Class
+
+In this section, we define the `Temp` class, which is designed to handle temperature-related data processing. The class includes methods for reading NetCDF files, reading shapefiles, filtering GeoDataFrames, extracting total bounds, and retrieving the CRS. The OOP approach helps organize and manage temperature-related data operations efficiently.
+
+### Further Analysis
+
+In the following section(s), we use the `Temp` class to read the NetCDF file containing temperature data and load the shapefile representing administrative boundaries. We filter the administrative boundaries to select only Portugal for further analysis. Later, We explore the temperature data by plotting it for a specific date range and spatial extent within Portugal. The visualization helps us understand the variation in temperature over time. Next part demonstrates how to work with GeoDataFrames to visualize administrative boundaries. We create a region mask for Portugal and visualize the respective temperature value for the region month wise. 
+
+---
+This notebook serves as a comprehensive guide to working with temperature data, administrative boundaries, and geospatial analysis techniques using an OOP approach. Feel free to adapt and extend the code for your specific research or analysis needs.
 
 ## The CDS Toolbox
 
